@@ -4,7 +4,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "concurrently \"cd python-backend && flask run\" \"cd node-backend && npm start\"",
+    "start-dev": "concurrently \"cd python-backend && flask run\" \"cd node-backend && npm start\"",
+    "start": "concurrently \"nodemon index.js\" \"python ../python-backend/app.py\"",
     "dev": "nodemon server.js"
   },
   "keywords": [],
@@ -19,5 +20,8 @@
     "form-data": "^4.0.2",
     "multer": "^1.4.5-lts.1",
     "nodemon": "^3.1.9"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
   }
 }
