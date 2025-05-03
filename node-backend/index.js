@@ -4,6 +4,13 @@ const axios = require("axios");
 const cors = require("cors");
 const FormData = require("form-data");
 const app = express();
+const bodyParser = require("body-parser");
+const petClinicRoutes = require("./src/routes/routes");
+
+app.use(cors());
+app.use(bodyParser.json());
+
+app.use("/api/v1/pet-clinic", petClinicRoutes);
 
 const upload = multer(); // store in memory
 app.use(cors());
@@ -39,6 +46,8 @@ app.post("/predict", upload.single("file"), async (req, res) => {
   }
 });
 
-app.listen(3000, () => {
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => {
   console.log("Node.js API running at http://localhost:3000");
 });
