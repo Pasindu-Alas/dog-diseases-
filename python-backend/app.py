@@ -6,7 +6,10 @@ import io
 
 app = Flask(__name__)
 
-model = tf.keras.models.load_model("SkinDisease.h5")
+# model = tf.keras.models.load_model("SkinDisease.h5")
+# model = tf.keras.models.load_model("D:\Reaserch new\test-backend-api\New folder\dog-diseases-\python-backend\SkinDisease.h5")
+model = tf.keras.models.load_model("D:\\Reaserch new\\test-backend-api\\New folder\\dog-diseases-\\python-backend\\SkinDisease.h5")
+
 
 
 

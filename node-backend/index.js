@@ -41,13 +41,15 @@ app.post("/predict", upload.single("file"), async (req, res) => {
 
     res.json(response.data);
   } catch (err) {
-    console.error("============ Error:", err.message);
+    // console.error("============ Error:", err.message);
+    console.log("============ Error:", err);
+
     res.status(500).json({ error: "Prediction failed" });
   }
 });
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3010;
 
 app.listen(PORT, () => {
-  console.log("Node.js API running at http://localhost:3000");
+  console.log("Node.js API running at http://localhost:" + PORT);
 });
